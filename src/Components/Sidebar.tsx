@@ -10,9 +10,20 @@ import {
   BsFillGearFill,
   BsX,
 } from "react-icons/bs";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
-function Sidebar({ openSidebarToggle, OpenSidebar }) {
+interface SidebarProps {
+  openSidebarToggle: boolean;
+  OpenSidebar: () => void;
+}
+
+function Sidebar({ openSidebarToggle, OpenSidebar }: SidebarProps) {
+  const location = useLocation();
+
+  const isActive = (path: string) => {
+    return location.pathname === path ? "active" : "";
+  };
+
   return (
     <aside
       id="sidebar"
@@ -28,38 +39,38 @@ function Sidebar({ openSidebarToggle, OpenSidebar }) {
       </div>
 
       <ul className="sidebar-list">
-        <li className="sidebar-list-item">
-          <Link to="/">
+        <li className={`sidebar-list-item ${isActive("/")}`}>
+          <Link to="/" onClick={openSidebarToggle ? OpenSidebar : undefined}>
             <BsGrid1X2Fill className="icon" /> Dashboard
           </Link>
         </li>
-        <li className="sidebar-list-item">
-          <Link to="/product">
+        <li className={`sidebar-list-item ${isActive("/product")}`}>
+          <Link to="/product" onClick={openSidebarToggle ? OpenSidebar : undefined}>
             <BsFillArchiveFill className="icon" /> Products
           </Link>
         </li>
         <li className="sidebar-list-item">
-          <a href="">
+          <Link to="#" style={{ cursor: "not-allowed", opacity: 0.6 }}>
             <BsFillGrid3X3GapFill className="icon" /> Categories
-          </a>
+          </Link>
         </li>
         <li className="sidebar-list-item">
-          <a href="">
+          <Link to="#" style={{ cursor: "not-allowed", opacity: 0.6 }}>
             <BsPeopleFill className="icon" /> Customers
-          </a>
+          </Link>
         </li>
         <li className="sidebar-list-item">
-          <a href="">
+          <Link to="#" style={{ cursor: "not-allowed", opacity: 0.6 }}>
             <BsListCheck className="icon" /> Inventory
-          </a>
+          </Link>
         </li>
         <li className="sidebar-list-item">
-          <a href="">
+          <Link to="#" style={{ cursor: "not-allowed", opacity: 0.6 }}>
             <BsMenuButtonWideFill className="icon" /> Reports
-          </a>
+          </Link>
         </li>
-        <li className="sidebar-list-item">
-          <Link to="/settings">
+        <li className={`sidebar-list-item ${isActive("/settings")}`}>
+          <Link to="/settings" onClick={openSidebarToggle ? OpenSidebar : undefined}>
             <BsFillGearFill className="icon" /> Settings
           </Link>
         </li>

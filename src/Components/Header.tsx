@@ -7,7 +7,12 @@ import {
   BsJustify,
 } from "react-icons/bs";
 
-function Header({ OpenSidebar }) {
+interface HeaderProps {
+  OpenSidebar: () => void;
+  openSidebarToggle?: boolean;
+}
+
+function Header({ OpenSidebar }: HeaderProps) {
   return (
     <header className="header">
       <div className="menu-icon">

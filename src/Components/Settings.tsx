@@ -38,7 +38,7 @@ const Settings = () => {
                 <label>Bio</label>
                 <textarea
                   placeholder="Tell us about yourself..."
-                  rows="2"
+                  rows={2}
                 ></textarea>
               </div>
 
