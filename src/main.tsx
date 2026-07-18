@@ -1,26 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-
-const router = createBrowserRouter(
-  [
-    {
-      path: "/",
-      element: <App />,
-    },
-  ],
-  {
-    basename: "/Admin-Panel-By-Disha",
-    future: {
-      v7_relativeSplatPath: true,
-    },
-  }
-);
+import { BrowserRouter } from "react-router-dom";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <BrowserRouter basename="/Admin-Panel-By-Disha">
+      <App />
+    </BrowserRouter>
   </React.StrictMode>
 );
 

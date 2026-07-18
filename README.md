@@ -35,3 +35,7 @@ A modern and interactive **Admin Dashboard** designed to manage data, products, 
 - Visit the Products Page to buy services.
 - Adjust preferences in Settings.
 
+## Future implementations
+- Add more features and properties.
+- Enhance data visualisation through various tools and graphics.
+- Setup User Authentication for wide audience

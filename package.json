@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://github.com/Dishajain280/Admin-Panel-By-Disha.git",
+  "homepage": "https://Dishajain280.github.io/Admin-Panel-By-Disha",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
